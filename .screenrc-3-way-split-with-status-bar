@@ -2,7 +2,7 @@
 backtick 2 30 30 $HOME/memory-used.sh
 
 # include CPU temp script as backtick 3:
-backtick 3 5 10 "${HOME}/cpu_temp.sh"
+backtick 3 5 10 "${HOME}/cpu-temperature.sh"
 
 # include free disk space script as backtick 4:
 backtick 4 5 10 "${HOME}/free_disk_simple.sh"
