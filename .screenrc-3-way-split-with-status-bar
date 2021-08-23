@@ -1,0 +1,50 @@
+# include free RAM script as backtick 2:
+backtick 2 30 30 $HOME/mem_usage.sh
+
+# include CPU temp script as backtick 3:
+backtick 3 5 10 "${HOME}/cpu_temp.sh"
+
+# include free disk space script as backtick 4:
+backtick 4 5 10 "${HOME}/free_disk_simple.sh"
+
+# the following two lines give a two-line status, with the current window highlighted
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%=%n%?: %t%?%=][%l][%2`][%4`][%3`][%{B}%D %d %M %Y %{W}%c%{g}]'
+
+# no welcome message
+startup_message off
+
+# get rid of silly xoff stuff
+bind s split
+
+# setup screens:
+screen -t htop  0 bash
+stuff "htop ; ^M"
+
+screen -t bash_1  1 bash
+stuff "cat readme ; ^M"
+
+screen -t bash_2 2 bash
+
+# setup layouts
+layout autosave on
+layout new full_screen
+select 2
+layout new split_screen
+select 2
+split -v
+focus right
+split -h
+select 1
+focus down
+select 0
+focus left
+
+layout attach split_screen
+#layout select split_screen
+#layout save def
+
+#key bindings:
+# switch layouts with F3 (prev layout) and F4 (next)
+bindkey -k k3 layout prev
+bindkey -k k4 layout next
