@@ -1,3 +1,7 @@
+#######################
+# external scripts:
+#######################
+
 # include free RAM script as backtick 2:
 backtick 2 30 30 $HOME/memory-used.sh
 
@@ -7,9 +11,20 @@ backtick 3 5 10 "${HOME}/cpu-temperature.sh"
 # include free disk space script as backtick 4:
 backtick 4 5 10 "${HOME}/free-disk-space.sh"
 
+# include CPU fan speed script as backtick 5:
+backtick 5 5 10 "${HOME}/cpu-fan-speed.sh"
+
+#######################
+# bottom status bar:
+#######################
+
 # the following two lines give a two-line status, with the current window highlighted
 hardstatus alwayslastline
-hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%=%n%?: %t%?%=][%l][%2`][%4`][%3`][%{B}%D %d %M %Y %{W}%c%{g}]'
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%=%n%?: %t%?%=][%l][%2`][%4`][%3`][%5`][%{W}%D %d %M %Y %c%{g}]'
+
+#######################
+# general settings:
+#######################
 
 # no welcome message
 startup_message off
@@ -17,17 +32,27 @@ startup_message off
 # get rid of silly xoff stuff
 bind s split
 
+#######################
 # setup screens:
+#######################
+
 screen -t htop  0 bash
 stuff "htop ; ^M"
 
 screen -t bash_1  1 bash
 stuff "cat readme ; ^M"
 
-screen -t bash_2 2 bash
+screen -t syslog_kernel 2 bash
+stuff "tail -F /var/log/syslog | grep kernel ; ^M"
 
-# setup layouts
+screen -t bash_2 3 bash
+
+#######################
+# setup layouts:
+#######################
+
 layout autosave on
+
 layout new full_screen
 select 2
 layout new split_screen
@@ -44,7 +69,10 @@ layout attach split_screen
 #layout select split_screen
 #layout save def
 
-#key bindings:
+#######################
+# key bindings:
+#######################
+
 # switch layouts with F3 (prev layout) and F4 (next)
 bindkey -k k3 layout prev
 bindkey -k k4 layout next
