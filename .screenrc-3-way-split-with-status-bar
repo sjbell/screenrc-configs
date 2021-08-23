@@ -5,7 +5,7 @@ backtick 2 30 30 $HOME/memory-used.sh
 backtick 3 5 10 "${HOME}/cpu-temperature.sh"
 
 # include free disk space script as backtick 4:
-backtick 4 5 10 "${HOME}/free_disk_simple.sh"
+backtick 4 5 10 "${HOME}/free-disk-space.sh"
 
 # the following two lines give a two-line status, with the current window highlighted
 hardstatus alwayslastline
