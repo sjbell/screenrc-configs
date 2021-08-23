@@ -2,4 +2,4 @@
 Useful .screenrc configs
 
 ## External bash scripts:
-- (memory-used.sh)[https://github.com/sjbell/screenrc-configs/blob/main/memory-used.sh]
+- [memory-used.sh](https://github.com/sjbell/screenrc-configs/blob/main/memory-used.sh)
