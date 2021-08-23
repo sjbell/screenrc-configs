@@ -1,5 +1,5 @@
 # include free RAM script as backtick 2:
-backtick 2 30 30 $HOME/mem_usage.sh
+backtick 2 30 30 $HOME/memory-used.sh
 
 # include CPU temp script as backtick 3:
 backtick 3 5 10 "${HOME}/cpu_temp.sh"
