@@ -2,7 +2,7 @@
 Useful .screenrc configs
 
 ## .screenrc configs
-- [3-way split with status bar](https://github.com/sjbell/screenrc-configs/blob/main/memory-used.sh)
+- [3-way split with status bar](https://github.com/sjbell/screenrc-configs/blob/main/.screenrc-3-way-split-with-status-bar)
 
 ## External bash scripts:
 - [memory-used.sh](https://github.com/sjbell/screenrc-configs/blob/main/memory-used.sh)
